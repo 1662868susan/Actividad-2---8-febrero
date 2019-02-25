@@ -1,0 +1,49 @@
+int tr;
+int tg;
+int tb;
+int ledr = 4;
+int ledg = 7;
+int ledb = 6;
+
+
+void setup()
+{
+  Serial.begin(9600);
+  Serial.println("Cuanto Tiempo?");
+  while (Serial.available() == 0) {
+  }
+  tr = Serial.parseInt();
+  pinMode(ledr,OUTPUT);
+
+    Serial.begin(9600);
+  Serial.println("Cuanto Tiempo?");
+  while (Serial.available() == 0) {
+  }
+  tg = Serial.parseInt();
+  pinMode(ledg,OUTPUT);
+
+  Serial.begin(9600);
+  Serial.println("Cuanto Tiempo?");
+  while (Serial.available() == 0) {
+  }
+  tb = Serial.parseInt();
+  pinMode(ledb,OUTPUT);
+
+}
+
+
+void loop()
+{
+    digitalWrite(ledr, HIGH);
+    delay(tr);
+    digitalWrite(ledr, LOW);
+    delay(tr);
+    digitalWrite(ledg, HIGH);
+    delay(tg);
+    digitalWrite(ledg, LOW);
+    delay(tg);
+    digitalWrite(ledb, HIGH);
+    delay(tb);
+    digitalWrite(ledb, LOW);
+    delay(tb);
+  }
